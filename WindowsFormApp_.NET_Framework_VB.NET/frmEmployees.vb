@@ -131,6 +131,24 @@ Public Class frmEmployees
     Private Sub actualizarDataTableEmployeesEmployeeTerritories()
         dgvEmployeesEmployeeTerritories.DataSource = dtEmployeesEmployeeTerritories
     End Sub
+    Private Sub setEmployees()
+        objEmployees.LastName = txtEmployeesLastName.Text
+        objEmployees.FirstName = txtEmployeesFirstName.Text
+        objEmployees.Title = txtEmployeesTitle.Text
+        objEmployees.TitleOfCourtesy = txtEmployeesTitleOfCourtesy.Text
+        objEmployees.BirthDate = convertirDateTimeAString(Convert.ToDateTime(mcEmployeesBirthDate.SelectionRange.Start.ToUniversalTime()))
+        objEmployees.HireDate = convertirDateTimeAString(Convert.ToDateTime(mcEmployeesHireDate.SelectionRange.Start.ToUniversalTime()))
+        objEmployees.Address = txtEmployeesAddress.Text
+        objEmployees.City = txtEmployeesCity.Text
+        objEmployees.Region = txtEmployeesRegion.Text
+        objEmployees.PostalCode = txtEmployeesPostalCode.Text
+        objEmployees.Country = txtEmployeesCountry.Text
+        objEmployees.HomePhone = txtEmployeesHomePhone.Text
+        objEmployees.Extension = txtEmployeesExtension.Text
+        objEmployees.Notes = txtEmployeesNotes.Text
+        objEmployees.ReportsTo = btnEmployeesReportsTo.Text
+        objEmployees.PhotoPath = txtEmployeesPhotoPath.Text
+    End Sub
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         inicializar()
     End Sub
@@ -160,16 +178,19 @@ Public Class frmEmployees
         dgvEmployees.DataSource = objManager.mostrarTodosConFiltro(cmbFilter.Text, txtFilter.Text)
     End Sub
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
+        setEmployees()
         MessageBox.Show(objManager.registrar(objEmployees, dtEmployeesEmployeeTerritories))
         inicializar()
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        setEmployees()
         MessageBox.Show(objManager.eliminar(objEmployees))
         inicializar()
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        setEmployees()
         MessageBox.Show(objManager.update(objEmployees, dtEmployeesEmployeeTerritories))
         inicializar()
     End Sub
