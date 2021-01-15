@@ -163,4 +163,9 @@ Public Class frmEmployees
         MessageBox.Show(objManager.registrar(objEmployees, dtEmployeesEmployeeTerritories))
         inicializar()
     End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        MessageBox.Show(objManager.eliminar(objEmployees))
+        inicializar()
+    End Sub
 End Class

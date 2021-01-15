@@ -115,7 +115,11 @@ Public Class SqlServerDataAccessEmployees
     End Function
 
     Public Sub delete(ID As String) Implements DataAccessObject.delete
-        Throw New NotImplementedException()
+        Dim objSqlCommand As SqlCommand = New SqlCommand(
+        "delete from Employees where EmployeeID = " + ID + "", objSqlConnection)
+        objSqlConnection.Open()
+        objSqlCommand.ExecuteNonQuery()
+        objSqlConnection.Close()
     End Sub
 
     Public Sub insertConDosID(ID1 As String, ID2 As String) Implements DataAccessObject.insertConDosID

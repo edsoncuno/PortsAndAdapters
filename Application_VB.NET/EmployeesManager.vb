@@ -72,4 +72,24 @@ Public Class EmployeesManager
         actualizarRegionTerritorios(objEmployees, dtEmpleadoRegionTerritorios)
         Return "Empleado registrado"
     End Function
+    Private Function existe(objEmployees As Employees) As Boolean
+        objEmployees = daoEmployees.selectById(objEmployees.EmployeeID)
+        If objEmployees.EmployeeID = Nothing Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+    Public Function eliminarEmpleado(objEmployees As Employees) As String
+        If existe(objEmployees) = False Then
+            Return "El empleado al que desea eliminar no existe"
+        End If
+        limpiarRegionTerritorios(objEmployees.EmployeeID)
+        Try
+            daoEmployees.delete(objEmployees.EmployeeID)
+            Return "Empleado eliminado"
+        Catch ex As Exception
+            Return "No se puedo eliminar al Empleado por que tiene Ordenes asociados"
+        End Try
+    End Function
 End Class

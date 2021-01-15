@@ -29,4 +29,8 @@ Public Class WfaManagerEmployees
     Public Function registrar(objEmployees As Object, objDataTable As DataTable) As String Implements Manager.registrar
         Return objEmployeesManager.registrarEmpleado(objEmployees, objDataTable)
     End Function
+
+    Public Function eliminar(objEmployees As Object) As String Implements Manager.eliminar
+        Return objEmployeesManager.eliminarEmpleado(objEmployees)
+    End Function
 End Class
