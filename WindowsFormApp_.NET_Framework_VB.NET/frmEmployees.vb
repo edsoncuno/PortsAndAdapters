@@ -24,7 +24,7 @@ Public Class frmEmployees
         cmbFilter.Text = ""
         txtFilter.Text = ""
         dgvEmployees.DataSource = objManager.mostrarTodos
-        dgvEmployeeTerritories = Nothing
+        dgvEmployeeTerritories.DataSource = dtEmployeesEmployeeTerritories
     End Sub
     Private Sub llenarFiltro()
         cmbFilter.Items.Add("")
@@ -123,14 +123,11 @@ Public Class frmEmployees
             objEmployees.EmployeeID = row.Cells("EmployeeID").Value.ToString()
             objEmployees = objManager.mostrar(objEmployees.EmployeeID)
             mostrarEmployees()
-            dtEmployeesEmployeeTerritories = objManager.mostraTablaAuxliar3("")
-            'mostrarEmployeeTerritories()
+            dtEmployeesEmployeeTerritories = objManager.mostraTablaAuxliar3("EmployeeID", objEmployees.EmployeeID)
+            dgvEmployeeTerritories.DataSource = dtEmployeesEmployeeTerritories
+            actualizarDataTableEmployeesEmployeeTerritories()
         End If
     End Sub
-    'Private Sub mostrarEmployeeTerritories()
-    '    dgvEmployeeTerritories.DataSource = dtEmployeesEmployeeTerritories
-    '    dgvEmployeesEmployeeTerritories.DataSource = dtEmployeesEmployeeTerritories
-    'End Sub
     Private Sub actualizarDataTableEmployeesEmployeeTerritories()
         dgvEmployeesEmployeeTerritories.DataSource = dtEmployeesEmployeeTerritories
     End Sub

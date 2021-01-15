@@ -4,5 +4,5 @@
     Function mostrarTodosConFiltro(filter As String, value As String) As DataTable
     Function mostrarTodosAuxiliar1() As DataTable
     Function mostratTodosAuxiliar2(filter As String, value As String) As DataTable
-    Function mostraTablaAuxliar3(value As String) As DataTable
+    Function mostraTablaAuxliar3(filter As String, value As String) As DataTable
 End Interface

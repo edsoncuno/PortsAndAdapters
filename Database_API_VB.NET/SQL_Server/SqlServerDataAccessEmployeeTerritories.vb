@@ -11,15 +11,14 @@ Public Class SqlServerDataAccessEmployeeTerritories
     End Function
 
     Public Function selectAllByFilter(filter As String, value As String) As DataTable Implements DataAccessObject.selectAllByFilter
-        Dim objSqlCommand As SqlCommand = New SqlCommand("select " +
-                                                         "Region.RegionDescription, " +
-                                                         "Territories.TerritoryDescription " +
-                                                         "from EmployeeTerritories " +
-                                                         "inner join Territories on " +
-                                                         "Territories.TerritoryID = EmployeeTerritories.TerritoryID " +
-                                                         "inner join Region on " +
-                                                         "Territories.RegionID = Region.RegionID " +
-                                                         "where EmployeeID = 1", objSqlConnection)
+        Dim objSqlCommand As SqlCommand = New SqlCommand(
+        "select Region.RegionDescription, Territories.TerritoryDescription " +
+        "from EmployeeTerritories " +
+        "inner join Territories on " +
+        "Territories.TerritoryID = EmployeeTerritories.TerritoryID " +
+        "inner join Region on " +
+        "Territories.RegionID = Region.RegionID " +
+        "where " + filter + " = " + value + "", objSqlConnection)
         objSqlConnection.Open()
         Dim objSqlDataReader As SqlDataReader = objSqlCommand.ExecuteReader()
         Dim objDataTable As DataTable = New DataTable()

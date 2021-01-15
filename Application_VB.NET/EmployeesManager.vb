@@ -34,7 +34,7 @@ Public Class EmployeesManager
         Dim objRegion = daoRegion.selectByFilter(filter, "'" + value + "'")
         Return daoTerritories.selectAllByFilter("RegionID", objRegion.RegionID)
     End Function
-    Public Function mostrarEmployeeTerritoriosPorEmployeeID() As DataTable
-        Return daoEmployeeTerritories.selectAllByFilter("", "")
+    Public Function mostrarEmployeeTerritoriosPorEmployeeID(filter As String, value As String) As DataTable
+        Return daoEmployeeTerritories.selectAllByFilter(filter, value)
     End Function
 End Class

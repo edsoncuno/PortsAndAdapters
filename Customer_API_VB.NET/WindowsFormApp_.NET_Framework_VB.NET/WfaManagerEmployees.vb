@@ -22,7 +22,7 @@ Public Class WfaManagerEmployees
     Function mostratTodosAuxiliar2(filter As String, value As String) As DataTable Implements Manager.mostratTodosAuxiliar2
         Return objEmployeesManager.mostrarTerritoriosDeLaRegionPorRegionDescription(filter, value)
     End Function
-    Function mostraTablaAuxliar3(value As String) As DataTable Implements Manager.mostraTablaAuxliar3
-        Return objEmployeesManager.mostrarEmployeeTerritoriosPorEmployeeID()
+    Function mostraTablaAuxliar3(filter As String, value As String) As DataTable Implements Manager.mostraTablaAuxliar3
+        Return objEmployeesManager.mostrarEmployeeTerritoriosPorEmployeeID(filter, value)
     End Function
 End Class
