@@ -1,0 +1,17 @@
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\bin\Debug\Customer_API_VB.NET.dll
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\bin\Debug\Customer_API_VB.NET.pdb
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\bin\Debug\Customer_API_VB.NET.xml
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\bin\Debug\Application_VB.NET.dll
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\bin\Debug\Database_API_VB.NET.dll
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\bin\Debug\Application_VB.NET.pdb
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\bin\Debug\Application_VB.NET.xml
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\bin\Debug\Database_API_VB.NET.pdb
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\bin\Debug\Database_API_VB.NET.xml
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\obj\Debug\Customer_API_VB.NET.vbprojAssemblyReference.cache
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\obj\Debug\Customer_API_VB.NET.Resources.resources
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\obj\Debug\Customer_API_VB.NET.vbproj.GenerateResource.cache
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\obj\Debug\Customer_API_VB.NET.vbproj.CoreCompileInputs.cache
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\obj\Debug\Customer_API_VB.NET.vbproj.CopyComplete
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\obj\Debug\Customer_API_VB.NET.dll
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\obj\Debug\Customer_API_VB.NET.xml
+C:\Users\Edson\Downloads\Edson\Visual Studio\PortsAndAdapters\Customer_API_VB.NET\obj\Debug\Customer_API_VB.NET.pdb
