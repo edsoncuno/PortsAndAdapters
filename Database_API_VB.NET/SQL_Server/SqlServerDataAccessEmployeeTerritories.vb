@@ -39,13 +39,13 @@ Public Class SqlServerDataAccessEmployeeTerritories
         Throw New NotImplementedException()
     End Function
 
-    Public Sub delete(EmployeeID As String) Implements DataAccessObject.delete
+    Public Function delete(EmployeeID As String) As String Implements DataAccessObject.delete
         Dim objSqlCommand As SqlCommand = New SqlCommand(
         "delete from EmployeeTerritories where EmployeeID = " + EmployeeID + "", objSqlConnection)
         objSqlConnection.Open()
         objSqlCommand.ExecuteNonQuery()
         objSqlConnection.Close()
-    End Sub
+    End Function
 
     Public Sub insertConDosID(ID1 As String, ID2 As String) Implements DataAccessObject.insertConDosID
         Dim objSqlCommand As SqlCommand = New SqlCommand(
@@ -56,6 +56,10 @@ Public Class SqlServerDataAccessEmployeeTerritories
     End Sub
 
     Public Function selectConDosFiltros(filtro1 As String, valor1 As String, filtro2 As String, valor2 As String) As Object Implements DataAccessObject.selectConDosFiltros
+        Throw New NotImplementedException()
+    End Function
+
+    Public Function update(objEmployees As Employees) As String Implements DataAccessObject.update
         Throw New NotImplementedException()
     End Function
 End Class

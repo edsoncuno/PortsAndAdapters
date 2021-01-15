@@ -85,11 +85,20 @@ Public Class EmployeesManager
             Return "El empleado al que desea eliminar no existe"
         End If
         limpiarRegionTerritorios(objEmployees.EmployeeID)
-        Try
-            daoEmployees.delete(objEmployees.EmployeeID)
-            Return "Empleado eliminado"
-        Catch ex As Exception
-            Return "No se puedo eliminar al Empleado por que tiene Ordenes asociados"
-        End Try
+        Return daoEmployees.delete(objEmployees.EmployeeID)
+    End Function
+    Public Function actualizarEmpleado(objEmployees As Employees, dtEmpleadoRegionTerritorios As DataTable) As String
+        If objEmployees.ReportsTo = "" Then
+            objEmployees.ReportsTo = "null"
+        End If
+        If esValido(objEmployees) = False Then
+            Return "Los datos del empeado no son validos"
+        End If
+        If existe(objEmployees) = False Then
+            Return "El empleado al que desea hacer los cambios no existe"
+        End If
+        daoEmployees.update(objEmployees)
+        actualizarRegionTerritorios(objEmployees, dtEmpleadoRegionTerritorios)
+        Return "Empleado Actualizado"
     End Function
 End Class

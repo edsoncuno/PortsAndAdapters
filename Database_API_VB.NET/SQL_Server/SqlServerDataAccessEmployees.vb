@@ -114,13 +114,19 @@ Public Class SqlServerDataAccessEmployees
         Return resultado
     End Function
 
-    Public Sub delete(ID As String) Implements DataAccessObject.delete
+    Public Function delete(ID As String) As String Implements DataAccessObject.delete
         Dim objSqlCommand As SqlCommand = New SqlCommand(
         "delete from Employees where EmployeeID = " + ID + "", objSqlConnection)
         objSqlConnection.Open()
-        objSqlCommand.ExecuteNonQuery()
-        objSqlConnection.Close()
-    End Sub
+        Try
+            objSqlCommand.ExecuteNonQuery()
+            objSqlConnection.Close()
+            Return "Empleado eliminado"
+        Catch ex As Exception
+            objSqlConnection.Close()
+            Return "No se puedo eliminar al Empleado por que tiene Ordenes asociados"
+        End Try
+    End Function
 
     Public Sub insertConDosID(ID1 As String, ID2 As String) Implements DataAccessObject.insertConDosID
         Throw New NotImplementedException()
@@ -128,5 +134,29 @@ Public Class SqlServerDataAccessEmployees
 
     Public Function selectConDosFiltros(filtro1 As String, valor1 As String, filtro2 As String, valor2 As String) As Object Implements DataAccessObject.selectConDosFiltros
         Throw New NotImplementedException()
+    End Function
+
+    Public Function update(objEmployees As Employees) As String Implements DataAccessObject.update
+        Dim objSqlCommand As SqlCommand = New SqlCommand(
+        "update Employees set " +
+        "LastName = '" + objEmployees.LastName + "', " +
+        "FirstName = '" + objEmployees.FirstName + "', " +
+        "Title = '" + objEmployees.Title + "', " +
+        "TitleOfCourtesy = '" + objEmployees.TitleOfCourtesy + "', " +
+        "Address = '" + objEmployees.Address + "', " +
+        "City = '" + objEmployees.City + "', " +
+        "Region = '" + objEmployees.Region + "', " +
+        "PostalCode = '" + objEmployees.PostalCode + "', " +
+        "Country = '" + objEmployees.Country + "', " +
+        "HomePhone = '" + objEmployees.HomePhone + "', " +
+        "Extension = '" + objEmployees.Extension + "', " +
+        "Notes = '" + objEmployees.Notes + "', " +
+        "ReportsTo = " + objEmployees.ReportsTo + ", " +
+        "PhotoPath = '" + objEmployees.PhotoPath + "' " +
+        "where EmployeeID = " + objEmployees.EmployeeID + "", objSqlConnection)
+        objSqlConnection.Open()
+        objSqlCommand.ExecuteNonQuery()
+        objSqlConnection.Close()
+        Return ""
     End Function
 End Class

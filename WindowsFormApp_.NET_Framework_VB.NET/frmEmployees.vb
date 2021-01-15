@@ -168,4 +168,9 @@ Public Class frmEmployees
         MessageBox.Show(objManager.eliminar(objEmployees))
         inicializar()
     End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        MessageBox.Show(objManager.update(objEmployees, dtEmployeesEmployeeTerritories))
+        inicializar()
+    End Sub
 End Class

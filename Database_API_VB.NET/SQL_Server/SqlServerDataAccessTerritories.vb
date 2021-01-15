@@ -3,9 +3,9 @@ Public Class SqlServerDataAccessTerritories
     Implements DataAccessObject
     Dim objSqlConnection As SqlConnection = New SqlConnection(SqlServerConnectionString.connectionString)
 
-    Public Sub delete(ID As String) Implements DataAccessObject.delete
+    Public Function delete(ID As String) As String Implements DataAccessObject.delete
         Throw New NotImplementedException()
-    End Sub
+    End Function
 
     Public Sub insertConDosID(ID1 As String, ID2 As String) Implements DataAccessObject.insertConDosID
         Throw New NotImplementedException()
@@ -58,5 +58,9 @@ Public Class SqlServerDataAccessTerritories
         End If
         objSqlConnection.Close()
         Return objTerritories
+    End Function
+
+    Public Function update(objEmployees As Employees) As String Implements DataAccessObject.update
+        Throw New NotImplementedException()
     End Function
 End Class

@@ -3,9 +3,9 @@ Public Class SqlServerDataAccessRegion
     Implements DataAccessObject
     Dim objSqlConnection As SqlConnection = New SqlConnection(SqlServerConnectionString.connectionString)
 
-    Public Sub delete(EmployeeID As String) Implements DataAccessObject.delete
+    Public Function delete(EmployeeID As String) As String Implements DataAccessObject.delete
         Throw New NotImplementedException()
-    End Sub
+    End Function
 
     Public Sub insertConDosID(ID1 As String, ID2 As String) Implements DataAccessObject.insertConDosID
         Throw New NotImplementedException()
@@ -53,6 +53,10 @@ Public Class SqlServerDataAccessRegion
     End Function
 
     Public Function selectConDosFiltros(filtro1 As String, valor1 As String, filtro2 As String, valor2 As String) As Object Implements DataAccessObject.selectConDosFiltros
+        Throw New NotImplementedException()
+    End Function
+
+    Public Function update(objEmployees As Employees) As String Implements DataAccessObject.update
         Throw New NotImplementedException()
     End Function
 End Class

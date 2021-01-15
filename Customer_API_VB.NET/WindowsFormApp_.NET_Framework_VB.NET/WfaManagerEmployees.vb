@@ -33,4 +33,8 @@ Public Class WfaManagerEmployees
     Public Function eliminar(objEmployees As Object) As String Implements Manager.eliminar
         Return objEmployeesManager.eliminarEmpleado(objEmployees)
     End Function
+
+    Public Function update(objEmployees As Object, objDataTable As DataTable) As String Implements Manager.update
+        Return objEmployeesManager.actualizarEmpleado(objEmployees, objDataTable)
+    End Function
 End Class
