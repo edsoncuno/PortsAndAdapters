@@ -25,4 +25,8 @@ Public Class WfaManagerEmployees
     Function mostraTablaAuxliar3(filter As String, value As String) As DataTable Implements Manager.mostraTablaAuxliar3
         Return objEmployeesManager.mostrarEmployeeTerritoriosPorEmployeeID(filter, value)
     End Function
+
+    Public Function registrar(objEmployees As Object, objDataTable As DataTable) As String Implements Manager.registrar
+        Return objEmployeesManager.registrarEmpleado(objEmployees, objDataTable)
+    End Function
 End Class

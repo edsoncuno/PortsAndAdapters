@@ -159,4 +159,8 @@ Public Class frmEmployees
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         dgvEmployees.DataSource = objManager.mostrarTodosConFiltro(cmbFilter.Text, txtFilter.Text)
     End Sub
+    Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
+        MessageBox.Show(objManager.registrar(objEmployees, dtEmployeesEmployeeTerritories))
+        inicializar()
+    End Sub
 End Class

@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Entities\Employees.vb" />
     <Compile Include="Entities\Region.vb" />
+    <Compile Include="Entities\Territories.vb" />
     <Compile Include="SQL_Server\SqlServerConnectionString.vb" />
     <Compile Include="SQL_Server\SqlServerDataAccessEmployees.vb" />
     <Compile Include="DataAccessObject.vb" />

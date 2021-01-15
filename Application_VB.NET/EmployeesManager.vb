@@ -37,4 +37,39 @@ Public Class EmployeesManager
     Public Function mostrarEmployeeTerritoriosPorEmployeeID(filter As String, value As String) As DataTable
         Return daoEmployeeTerritories.selectAllByFilter(filter, value)
     End Function
+    Private Function esValido(objEmployees As Employees) As Boolean
+        If objEmployees.LastName = "" Then
+            Return False
+        End If
+        If objEmployees.FirstName = "" Then
+            Return False
+        End If
+        Return True
+    End Function
+    Private Sub limpiarRegionTerritorios(EmployeeID As String)
+        daoEmployeeTerritories.delete(EmployeeID)
+    End Sub
+    Public Sub agregarTerritorio(EmployeeID As String, RegionDescription As String, TerritoryDescription As String)
+        Dim objRegion As Region = daoRegion.selectByFilter("RegionDescription", "'" + RegionDescription + "'")
+        Dim objTerritories As Territories = daoTerritories.selectConDosFiltros("RegionID", objRegion.RegionID, "TerritoryDescription", "'" + TerritoryDescription + "'")
+        daoEmployeeTerritories.insertConDosID(EmployeeID, "'" + objTerritories.TerritoryID + "'")
+    End Sub
+    Private Sub actualizarRegionTerritorios(objEmployees As Employees, dtEmpleadoRegionTerritorios As DataTable)
+        limpiarRegionTerritorios(objEmployees.EmployeeID)
+        For index = 0 To dtEmpleadoRegionTerritorios.Rows.Count - 1
+            Dim dr As DataRow = dtEmpleadoRegionTerritorios.Rows.Item(index)
+            agregarTerritorio(objEmployees.EmployeeID, dr("RegionDescription").ToString, dr("TerritoryDescription").ToString)
+        Next
+    End Sub
+    Public Function registrarEmpleado(objEmployees As Employees, dtEmpleadoRegionTerritorios As DataTable) As String
+        If objEmployees.ReportsTo = "" Then
+            objEmployees.ReportsTo = "null"
+        End If
+        If esValido(objEmployees) = False Then
+            Return "Los datos del empeado no son validos"
+        End If
+        objEmployees.EmployeeID = daoEmployees.insert(objEmployees)
+        actualizarRegionTerritorios(objEmployees, dtEmpleadoRegionTerritorios)
+        Return "Empleado registrado"
+    End Function
 End Class

@@ -30,4 +30,32 @@ Public Class SqlServerDataAccessEmployeeTerritories
     Public Function selectByFilter(filter As String, value As String) As Object Implements DataAccessObject.selectByFilter
         Throw New NotImplementedException()
     End Function
+
+    Public Function selectLast() As String Implements DataAccessObject.selectLast
+        Throw New NotImplementedException()
+    End Function
+
+    Public Function insert(objEmployees As Employees) As String Implements DataAccessObject.insert
+        Throw New NotImplementedException()
+    End Function
+
+    Public Sub delete(EmployeeID As String) Implements DataAccessObject.delete
+        Dim objSqlCommand As SqlCommand = New SqlCommand(
+        "delete from EmployeeTerritories where EmployeeID = " + EmployeeID + "", objSqlConnection)
+        objSqlConnection.Open()
+        objSqlCommand.ExecuteNonQuery()
+        objSqlConnection.Close()
+    End Sub
+
+    Public Sub insertConDosID(ID1 As String, ID2 As String) Implements DataAccessObject.insertConDosID
+        Dim objSqlCommand As SqlCommand = New SqlCommand(
+        "insert into EmployeeTerritories (EmployeeID, TerritoryID) values (" + ID1 + "," + ID2 + ")", objSqlConnection)
+        objSqlConnection.Open()
+        objSqlCommand.ExecuteNonQuery()
+        objSqlConnection.Close()
+    End Sub
+
+    Public Function selectConDosFiltros(filtro1 As String, valor1 As String, filtro2 As String, valor2 As String) As Object Implements DataAccessObject.selectConDosFiltros
+        Throw New NotImplementedException()
+    End Function
 End Class
